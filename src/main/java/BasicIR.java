@@ -5,5 +5,4 @@ public class BasicIR {
 
         indexer.readAllFiles();
     }
-
 }
