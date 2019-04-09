@@ -44,9 +44,9 @@ public class BasicAnalyzer extends Analyzer {
     protected TokenStreamComponents createComponents(String fieldName) {
         Tokenizer tokenizer = new WhitespaceTokenizer();
         TokenStream stream = new LowerCaseFilter(tokenizer);
-        stream = new ASCIIFoldingFilter(stream);
         stream = new StopFilter(stream, m_stopWords);
         stream = new SnowballFilter(stream, new RomanianStemmer());
+        stream = new ASCIIFoldingFilter(stream);
 
         return new TokenStreamComponents(tokenizer, stream);
     }
